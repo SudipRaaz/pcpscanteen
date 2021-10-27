@@ -31,10 +31,10 @@ class Card1 extends StatelessWidget {
             ),
           ],
         ),
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(16),
         constraints: const BoxConstraints.expand(
           width: 350,
-          height: 450,
+          height: 550,
         ),
         decoration: const BoxDecoration(
           image: DecorationImage(
