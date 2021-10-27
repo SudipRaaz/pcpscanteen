@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'pcpscanteen_theme.dart';
+import 'package:pcpscanteen/home.dart';
+import 'package:pcpscanteen/pcpscanteen_theme.dart';
 
 void main() {
   runApp(const PcpsCanteenApp());
@@ -15,20 +16,7 @@ class PcpsCanteenApp extends StatelessWidget {
     return MaterialApp(
       title: 'PCPS Canteen',
       theme: theme,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'PCPS Canteen',
-            style: theme.textTheme.headline6,
-          ),
-        ),
-        body: Center(
-          child: Text(
-            'Lets get cooking something in PCPS Canteen. Hello Students',
-            style: theme.textTheme.headline1,
-          ),
-        ),
-      ),
+      home: const Home(),
     );
   }
 }
