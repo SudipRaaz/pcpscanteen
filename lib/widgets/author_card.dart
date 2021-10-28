@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pcpscanteen/pcpscanteen_theme.dart';
+import 'package:pcpscanteen/widgets/circle_image.dart';
 
 class AuthorCard extends StatelessWidget {
   final String authorName;
@@ -17,7 +19,34 @@ class AuthorCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       child: Row(
-        children: [],
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              CircleImage(
+                imageProvider: imageProvider,
+                imageRadius: 30,
+              ),
+              const SizedBox(width: 8),
+              Column(
+                children: [
+                  Text(authorName,
+                      style: PcpscanteenTheme.lightTextTheme.headline2),
+                  Text(title, style: PcpscanteenTheme.lightTextTheme.headline3),
+                ],
+              ),
+            ],
+          ),
+          IconButton(
+            icon: const Icon(Icons.favorite_border),
+            iconSize: 30,
+            color: Colors.pink[700],
+            onPressed: () {
+              const snackBar = SnackBar(content: Text('Favorite Pressed'));
+              ScaffoldMessenger.of(context).showSnackBar(snackBar);
+            },
+          ),
+        ],
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pcpscanteen/pcpscanteen_theme.dart';
 import 'package:pcpscanteen/widgets/author_card.dart';
 
 class Card2 extends StatelessWidget {
@@ -22,8 +23,30 @@ class Card2 extends StatelessWidget {
         child: Column(
           children: [
             const AuthorCard(
-                authorName: 'Santosh Shah', title: 'Nepalese Desserts')
-            // Todo 2: add positioned text
+              authorName: 'Santosh Shah',
+              title: 'Nepalese Desserts',
+              imageProvider: AssetImage('assets/images/author.jpg'),
+            ),
+            Expanded(
+              child: Stack(
+                children: [
+                  Positioned(
+                    child: Text('Recipe',
+                        style: PcpscanteenTheme.lightTextTheme.headline1),
+                    bottom: 16,
+                    right: 16,
+                  ),
+                  Positioned(
+                      bottom: 70,
+                      left: 16,
+                      child: RotatedBox(
+                        child: Text('Traditional',
+                            style: PcpscanteenTheme.lightTextTheme.headline1),
+                        quarterTurns: 3,
+                      )),
+                ],
+              ),
+            ),
           ],
         ),
       ),
